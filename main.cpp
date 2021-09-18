@@ -186,8 +186,9 @@ int IntType::divide(int lhs, int rhs)
                   << std::endl;
         return lhs;
     }
-    else
-        return lhs / rhs;
+
+    return lhs / rhs;
+    
 }
 
 int main() 
