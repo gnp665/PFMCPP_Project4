@@ -180,8 +180,7 @@ int IntType::divide(int lhs, int rhs)
 {
     if (0 == rhs)
     {
-        std::cout << std::endl
-                  << "error, integer division by zero will crash the program!"
+        std::cout << "error, integer division by zero will crash the program!"
                   << std::endl
                   << "returning lhs"
                   << std::endl;
