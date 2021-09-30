@@ -128,7 +128,7 @@ struct FloatType
 {
     float* value;
 
-    FloatType() : value(new float) { }
+    FloatType( float initialFloat ) : value( new float( initialFloat ) ) { }
 
     ~FloatType()
     {
@@ -168,7 +168,7 @@ struct DoubleType
 {
     double* value;
 
-    DoubleType() : value(new double) { }
+    DoubleType( double initialDouble ) : value( new double( initialDouble ) ) { }
 
     ~DoubleType()
     {
@@ -208,14 +208,14 @@ struct IntType
 {
     int* value;
 
-    IntType() : value(new int) { }
+    IntType( int initialInt ) : value( new int( initialInt ) ) { }
 
     ~IntType()
     {
         delete value;
         value = nullptr;
     }
-    
+
     int add(int lhs, int rhs);
     int subtract(int lhs, int rhs );
     int multiply(int lhs, int rhs );
