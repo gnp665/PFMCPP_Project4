@@ -14,9 +14,7 @@ New/This/Pointers/References conclusion
          on the heap without leaking, without using smart pointers. 
  */
 
-
 struct A { };  
-
 
 struct HeapA 
 {
@@ -106,7 +104,11 @@ inf
 
 good to go!
 
+*/
 
+
+
+/*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
  Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
@@ -119,6 +121,106 @@ good to go!
 
  Wait for my code review.
  */
+
+#include <iostream>
+
+struct FloatType 
+{
+    float add(float lhs, float rhs);
+    float subtract(float lhs, float rhs );
+    float multiply(float lhs, float rhs );
+    float divide(float lhs, float rhs );
+};
+
+float FloatType::add(float lhs, float rhs)
+{
+    return lhs + rhs;
+}
+
+float FloatType::subtract(float lhs, float rhs)
+{
+    return lhs - rhs;
+}
+
+float FloatType::multiply(float lhs, float rhs)
+{
+    return lhs * rhs;
+}
+
+float FloatType::divide(float lhs, float rhs)
+{
+    if (0.0f == rhs )
+        std::cout << "\nwarning, floating point division by zero returns 'inf' !\n";
+    return lhs / rhs;
+}
+
+struct DoubleType 
+{
+    double add(double lhs, double rhs);
+    double subtract(double lhs, double rhs );
+    double multiply(double lhs, double rhs );
+    double divide(double lhs, double rhs );
+};
+
+double DoubleType::add(double lhs, double rhs)
+{
+    return lhs + rhs;
+}
+
+double DoubleType::subtract(double lhs, double rhs)
+{
+    return lhs - rhs;
+}
+
+double DoubleType::multiply(double lhs, double rhs)
+{
+    return lhs * rhs;
+}
+
+double DoubleType::divide(double lhs, double rhs)
+{
+    if (0.0 == rhs)
+        std::cout << "\nwarning, floating point division by zero returns 'inf' !\n";
+    return lhs / rhs;
+}
+
+struct IntType 
+{
+    int add(int lhs, int rhs);
+    int subtract(int lhs, int rhs );
+    int multiply(int lhs, int rhs );
+    int divide(int lhs, int rhs );
+};
+
+int IntType::add(int lhs, int rhs)
+{
+    return lhs + rhs;
+}
+
+int IntType::subtract(int lhs, int rhs)
+{
+    return lhs - rhs;
+}
+
+int IntType::multiply(int lhs, int rhs)
+{
+    return lhs * rhs;
+}
+
+int IntType::divide(int lhs, int rhs)
+{
+    if (0 == rhs)
+    {
+        std::cout << "error, integer division by zero will crash the program!"
+                  << std::endl
+                  << "returning lhs"
+                  << std::endl;
+        return lhs;
+    }
+
+    return lhs / rhs;
+    
+}
 
 #include <iostream>
 
